@@ -8,7 +8,7 @@
 	</parent>
 	<groupId>AlgoritmosG3</groupId>
 	<artifactId>PuntosDeInteres</artifactId>
-	<version>0.0.19-SNAPSHOT</version>
+	<version>0.0.20-SNAPSHOT</version>
 	<name>POIS</name>
 	<dependencies>
 		<dependency>
