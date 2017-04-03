@@ -6,6 +6,8 @@ import java.text.DecimalFormat
 import java.util.HashSet
 import javax.persistence.CascadeType
 import javax.persistence.Column
+import javax.persistence.DiscriminatorColumn
+import javax.persistence.DiscriminatorType
 import javax.persistence.Entity
 import javax.persistence.FetchType
 import javax.persistence.GeneratedValue
@@ -13,7 +15,6 @@ import javax.persistence.Id
 import javax.persistence.Inheritance
 import javax.persistence.InheritanceType
 import javax.persistence.ManyToOne
-import javax.persistence.OneToMany
 import javax.persistence.OneToOne
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.joda.time.DateTime
@@ -26,7 +27,7 @@ import org.uqbar.geodds.Point
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 //TODO definir delimitador?
-//@DiscriminatorColumn(name="tipoCandidato", discriminatorType=DiscriminatorType.INTEGER)
+@DiscriminatorColumn(name="tipoPoi", discriminatorType=DiscriminatorType.INTEGER)
 
 abstract class Poi{
 	
