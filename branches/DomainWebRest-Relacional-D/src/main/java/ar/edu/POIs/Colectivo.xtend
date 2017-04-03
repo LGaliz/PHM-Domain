@@ -21,7 +21,6 @@ import org.uqbar.geodds.Point
 class Colectivo extends Poi {
 	@Column(length=20)
 	String linea
-	//String nombrePoi = "linea"
 	
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@Transient
@@ -33,21 +32,21 @@ class Colectivo extends Poi {
 
 	new() {
 	}
+
 //==============================================================3
 //	override setNombrePoi(){
 //		"linea"
 //		
 //	}
-	
 	override getNombre() {
-	"Linea "+linea
+		"Linea " + linea
 	}
 
 	override getDireccion() {
 		""
 	}
 
-	override getDistancia(Point gpsPosicion) {						
+	override getDistancia(Point gpsPosicion) {
 		puntoMasCerca(recorrido, gpsPosicion).distance(gpsPosicion)
 	}
 
@@ -55,6 +54,7 @@ class Colectivo extends Poi {
 		(recorrido.sortBy[parada|parada.distance(unPunto)]).get(0)
 
 	}
+
 //==============================================================3
 	def void addParada(double x, double y) {
 		recorrido.add(Point.and(x, y))
@@ -70,9 +70,9 @@ class Colectivo extends Poi {
 	}
 
 	override matchearPoi(String valorBuscado) {
-		StringUtilities.queComienceCon(valorBuscado,linea) || matchearNombrePoi(valorBuscado)// StringUtilities.queComienceCon(valorBuscado,"linea")
+		StringUtilities.queComienceCon(valorBuscado, linea) || matchearNombrePoi(valorBuscado) // StringUtilities.queComienceCon(valorBuscado,"linea")
 	}
-	
+
 	def boolean cercaniaParada(Point unPunto, Point parada) {
 		parada.distance(unPunto) < 0.1
 	}
@@ -80,5 +80,4 @@ class Colectivo extends Poi {
 //	override validateCreate() {
 //		Validacion.colectivo(this)
 //	}
-
 }

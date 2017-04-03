@@ -70,8 +70,7 @@ abstract class RepoDefault<T> {
 		val session = sessionFactory.openSession
 		try {
 			session.beginTransaction
-			session.save(t)
-//			session.saveOrUpdate(t)
+			session.saveOrUpdate(t)
 			session.getTransaction.commit
 		} catch (HibernateException e) {
 			session.getTransaction.rollback

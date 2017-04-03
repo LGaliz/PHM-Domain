@@ -23,8 +23,7 @@ class Cgp extends Poi {
 	@OneToOne(cascade=CascadeType.ALL)//fetch=FetchType.LAZY)
 	Comuna comuna
 	
-	@ManyToMany(/*targetEntity=typeof(Servicio),*/ cascade=CascadeType.ALL, fetch = FetchType.EAGER)/* , mappedBy="servicio"*/
-	@Transient
+	@ManyToMany(/*targetEntity=typeof(Servicio),*/ cascade=CascadeType.ALL, fetch = FetchType.LAZY)/* , mappedBy="servicio"*/
 	List<Servicio> servicios = new ArrayList<Servicio>
 
 	new(Comuna _comuna, Direccion _miDireccion) {

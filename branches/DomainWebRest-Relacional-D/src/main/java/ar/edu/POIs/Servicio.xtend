@@ -1,5 +1,6 @@
 package ar.edu.POIs
 
+import javax.persistence.CascadeType
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -18,7 +19,7 @@ class Servicio {
 	@Column
 	String nombre //nombreServicio
 	
-	@ManyToOne()
+	@ManyToOne(cascade=CascadeType.ALL)
 	HorarioDeAtencion horario
 
 	new(String _nombreServicio, HorarioDeAtencion _horario) {
