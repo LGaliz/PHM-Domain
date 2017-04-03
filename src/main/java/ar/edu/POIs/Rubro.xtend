@@ -14,8 +14,10 @@ class Rubro {
 	@Id
 	@GeneratedValue
 	private Long id
-	@Column
+	
+	@Column(length=150)
 	String nombre //nombreRubro
+	
 	@Column
 	double cercania
 

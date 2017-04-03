@@ -14,6 +14,7 @@ import javax.persistence.GeneratedValue
 import javax.persistence.Id
 import javax.persistence.Inheritance
 import javax.persistence.InheritanceType
+import javax.persistence.JoinColumn
 import javax.persistence.ManyToOne
 import javax.persistence.OneToOne
 import org.eclipse.xtend.lib.annotations.Accessors
@@ -35,7 +36,8 @@ abstract class Poi{
 	@GeneratedValue
 	private Long id
 	
-	@ManyToOne(cascade=CascadeType.ALL) //TODO
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="HORARIO_ID",nullable=true)
 	HorarioDeAtencion horario
 	
 	@ManyToOne/*/(targetEntity = typeof(Direccion))*/(fetch=FetchType.EAGER,cascade=CascadeType.ALL) //TODO

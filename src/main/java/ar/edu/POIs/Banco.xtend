@@ -18,8 +18,9 @@ class Banco extends Poi {
 	String nombreBanco
 	
 	//TODO
-	@Column
-    @ElementCollection(targetClass=typeof(String))
+	//@Column
+    //@ElementCollection(targetClass=typeof(String))
+    transient
 	List<String> servicios = newArrayList
 
 	override getNombre() {

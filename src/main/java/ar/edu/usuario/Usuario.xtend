@@ -29,12 +29,13 @@ class Usuario {
 	@Id
 	@GeneratedValue
 	private Long id
-//	Integer id
 
 	@Column(length=50)
 	String mail
+
 	@Column(length=50)
 	String cuenta
+
 	@Column(length=50)
 	String password
 
